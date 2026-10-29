@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variables, tipos y conversiones · Theo Van Celst</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <nav class="navbar navbar-dark bg-primary mb-4">
+    <div class="container">
+      <span class="navbar-brand mb-0 h1">Theo Van Celst</span>
+      <span class="navbar-text">Tarea 3 · DWEC</span>
+    </div>
+  </nav>
+
+  <header class="container mb-4">
+    <h1 class="h2">Variables, tipos y conversiones</h1>
+    <p class="text-secondary">Cuaderno de laboratorio para comprobar el comportamiento de JavaScript en la consola.</p>
+  </header>
+
+  <main class="container mb-5">
+
+    <!-- Ejercicio 1 -->
+    <section class="card mb-4">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Ejercicio 1. Variables y typeof</h2>
+      </div>
+      <div class="card-body">
+        <pre class="bg-dark text-light p-3 rounded"><code>function ejercicio1() {
+  console.log("--- Ejercicio 1 · Theo Van Celst ---");
+
+  const edad = 20;
+  const usuario = "Theo";
+  const activo = true;
+  const vacio = null;
+  const granEntero = 100n;
+  let estado;
+
+  console.log("edad:", edad, typeof edad);
+  console.log("usuario:", usuario, typeof usuario);
+  console.log("activo:", activo, typeof activo);
+  console.log("vacio:", vacio, typeof vacio);
+  console.log("granEntero:", granEntero, typeof granEntero);
+  console.log("estado inicial:", estado, typeof estado);
+
+  estado = "finalizado";
+  console.log("estado final:", estado, typeof estado);
+}</code></pre>
+        <table class="table table-bordered mt-3">
+          <thead class="table-light">
+            <tr><th>Variable</th><th>Valor</th><th>Espero</th><th>Sale</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>edad</code></td><td>20</td><td>number</td><td>number</td></tr>
+            <tr><td><code>usuario</code></td><td>"Theo"</td><td>string</td><td>string</td></tr>
+            <tr><td><code>activo</code></td><td>true</td><td>boolean</td><td>boolean</td></tr>
+            <tr><td><code>vacio</code></td><td>null</td><td>object</td><td>object</td></tr>
+            <tr><td><code>granEntero</code></td><td>100n</td><td>bigint</td><td>bigint</td></tr>
+            <tr><td><code>estado (inicio)</code></td><td>undefined</td><td>undefined</td><td>undefined</td></tr>
+            <tr><td><code>estado (fin)</code></td><td>"finalizado"</td><td>string</td><td>string</td></tr>
+          </tbody>
+        </table>
+        <p class="small text-muted mb-0">El valor <code>null</code> devuelve <code>"object"</code> por un comportamiento histórico de JavaScript.</p>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary" onclick="ejercicio1()">Ejecutar</button>
+      </div>
+    </section>
+
+    <!-- Ejercicio 2 -->
+    <section class="card mb-4">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Ejercicio 2. Conversiones explícitas</h2>
+      </div>
+      <div class="card-body">
+        <pre class="bg-dark text-light p-3 rounded"><code>function ejercicio2() {
+  console.log("--- Ejercicio 2 · Theo Van Celst ---");
+
+  const c1 = String(123);
+  const c2 = Number("123");
+  const c3 = Number("12abc");
+  const c4 = Number("");
+  const c5 = Number(true);
+  const c6 = Boolean(0);
+  const c7 = Boolean("texto");
+  const c8 = Boolean("");
+
+  console.log('String(123):', c1, typeof c1);
+  console.log('Number("123"):', c2, typeof c2);
+  console.log('Number("12abc"):', c3, typeof c3);
+  console.log('Number(""):', c4, typeof c4);
+  console.log('Number(true):', c5, typeof c5);
+  console.log('Boolean(0):', c6, typeof c6);
+  console.log('Boolean("texto"):', c7, typeof c7);
+  console.log('Boolean(""):', c8, typeof c8);
+}</code></pre>
+        <table class="table table-bordered mt-3">
+          <thead class="table-light">
+            <tr><th>Conversión</th><th>Espero</th><th>Sale</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>String(123)</code></td><td>"123" (string)</td><td>"123" (string)</td></tr>
+            <tr><td><code>Number("123")</code></td><td>123 (number)</td><td>123 (number)</td></tr>
+            <tr><td><code>Number("12abc")</code></td><td>NaN (number)</td><td>NaN (number)</td></tr>
+            <tr><td><code>Number("")</code></td><td>0 (number)</td><td>0 (number)</td></tr>
+            <tr><td><code>Number(true)</code></td><td>1 (number)</td><td>1 (number)</td></tr>
+            <tr><td><code>Boolean(0)</code></td><td>false (boolean)</td><td>false (boolean)</td></tr>
+            <tr><td><code>Boolean("texto")</code></td><td>true (boolean)</td><td>true (boolean)</td></tr>
+            <tr><td><code>Boolean("")</code></td><td>false (boolean)</td><td>false (boolean)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary" onclick="ejercicio2()">Ejecutar</button>
+      </div>
+    </section>
+
+    <!-- Ejercicio 3 -->
+    <section class="card mb-4">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Ejercicio 3. Coerción y comparaciones</h2>
+      </div>
+      <div class="card-body">
+        <pre class="bg-dark text-light p-3 rounded"><code>function ejercicio3() {
+  console.log("--- Ejercicio 3 · Theo Van Celst ---");
+
+  console.log('"10" - 2:', "10" - 2);
+  console.log('"10" + 2:', "10" + 2);
+  console.log('"4" * 2:', "4" * 2);
+  console.log('true + 1:', true + 1);
+  console.log('"15" / 3:', "15" / 3);
+  console.log('"Item: " + 5:', "Item: " + 5);
+
+  console.log('5 == "5":', 5 == "5");
+  console.log('5 === "5":', 5 === "5");
+  console.log('0 == false:', 0 == false);
+  console.log('0 === false:', 0 === false);
+  console.log('null == undefined:', null == undefined);
+  console.log('null === undefined:', null === undefined);
+}</code></pre>
+        <table class="table table-bordered mt-3">
+          <thead class="table-light">
+            <tr><th>Expresión</th><th>Espero</th><th>Sale</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>"10" - 2</code></td><td>8</td><td>8</td></tr>
+            <tr><td><code>"10" + 2</code></td><td>"102"</td><td>"102"</td></tr>
+            <tr><td><code>"4" * 2</code></td><td>8</td><td>8</td></tr>
+            <tr><td><code>true + 1</code></td><td>2</td><td>2</td></tr>
+            <tr><td><code>"15" / 3</code></td><td>5</td><td>5</td></tr>
+            <tr><td><code>"Item: " + 5</code></td><td>"Item: 5"</td><td>"Item: 5"</td></tr>
+            <tr><td><code>5 == "5" vs 5 === "5"</code></td><td>true / false</td><td>true / false</td></tr>
+            <tr><td><code>0 == false vs 0 === false</code></td><td>true / false</td><td>true / false</td></tr>
+            <tr><td><code>null == undefined vs null === undefined</code></td><td>true / false</td><td>true / false</td></tr>
+          </tbody>
+        </table>
+        <p class="small text-muted mb-0">El operador <code>+</code> realiza concatenación si hay texto. Los demás operadores aritméticos convierten los datos a número.</p>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary" onclick="ejercicio3()">Ejecutar</button>
+      </div>
+    </section>
+
+    <!-- Ejercicio 4 -->
+    <section class="card mb-4">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Ejercicio 4. Ficha con plantillas de cadena</h2>
+      </div>
+      <div class="card-body">
+        <pre class="bg-dark text-light p-3 rounded"><code>function ejercicio4() {
+  console.log("--- Ejercicio 4 · Theo Van Celst ---");
+
+  const nombre = "Theo Van Celst";
+  const ciclo = "DAW";
+  const curso = "2º";
+  const aficion = "programar";
+
+  let horas = 5;
+  horas += 2;
+
+  const msg1 = `Me llamo ${nombre}. Estudio ${curso} de ${ciclo}, me gusta ${aficion} y llevo ${horas} horas de estudio.`;
+  alert(msg1);
+  console.log("Plantilla:", msg1);
+
+  const msg2 = "Me llamo " + nombre + ". Estudio " + curso + " de " + ciclo + ", me gusta " + aficion + " y llevo " + horas + " horas de estudio.";
+  console.log("Concatenado:", msg2);
+
+  console.log("¿Son iguales?:", msg1 === msg2);
+}</code></pre>
+        <div class="alert alert-danger mt-3 mb-0">
+          <strong>Error de const:</strong> <code>Uncaught TypeError: Assignment to constant variable.</code><br>
+          <small>Ocurre al intentar cambiar el valor de una variable declarada con <code>const</code>.</small>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary" onclick="ejercicio4()">Ejecutar</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <small>DWEC · Theo Van Celst · 2026</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

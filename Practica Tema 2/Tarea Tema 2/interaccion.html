@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DWEC - Tema 2: Interacción JS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">DWEC | Theo Van Celst</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Parte A: Motores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="interaccion.html">Parte B: Interacción</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <h1 class="mb-4">Parte B: Pruebas de Interacción y Consola</h1>
+
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <!-- Aqui tenemos el Card contenedora -->
+        <div class="card shadow-sm mb-4">
+          <div class="card-header bg-primary text-white">
+            <h5 class="card-title mb-0">Panel de Acciones JavaScript</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Haz clic en los siguientes botones para desencadenar eventos de ventana y revisar los logs correspondientes en las herramientas de desarrollador (F12).</p>
+            
+            <div class="d-grid gap-3 d-md-flex justify-content-md-start">
+              <button id="btnDespedida" onclick="despedida()" class="btn btn-success">Despedida</button>
+              <button id="btnSaludar" onclick="saludarUsuario()" class="btn btn-success">Saludar</button>
+              <button id="btnError" onclick="simularErrorServidor()" class="btn btn-danger">Simular un error</button>
+              <button id="btnNavegador" onclick="detectarNavegador()" class="btn btn-warning">¿Qué navegador soy?</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- List Group explicativo -->
+        <div class="card">
+          <div class="card-header">
+            <strong>Descripción técnica de los eventos</strong>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Saludar:</strong> Lanza una alerta con el nombre del alumno e imprime una traza informativa en la consola (<code>console.log</code>).</li>
+            <li class="list-group-item"><strong>Simular Error:</strong> No interrumpe la UI del usuario. Emite silenciosamente un registro de error interno (<code>console.error</code>).</li>
+            <li class="list-group-item"><strong>¿Qué navegador soy?:</strong> Lee la propiedad de red <code>navigator.userAgent</code>, la muestra en ventana modal y guarda una advertencia en consola (<code>console.warn</code>).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JavaScript propio cargado al final del body -->
+  <script src="app.js"></script>
+</body>
+</html>
