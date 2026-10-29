@@ -40,7 +40,7 @@ Se muestra la aplicación de lista de tareas con tres elementos introducidos, do
 
 ### f) Ejercicio 6: los datos de la ventana en el móvil
 
-<img src="capturas/captua f.png" alt="Los datos de la ventana en el modo móvil" width="300">
+<img src="capturas/captura f.png" alt="Los datos de la ventana en el modo móvil" width="300">
 
 En el modo de simulación móvil (Responsive Design Mode), el script detecta las dimensiones reducidas de la ventana (window.innerWidth) y muestra el punto de corte (breakpoint) correspondiente a dispositivos móviles, a diferencia del ancho completo detectado en el escritorio.
 
