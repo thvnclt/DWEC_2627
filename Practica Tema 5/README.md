@@ -16,7 +16,7 @@
 
 ### a) La página recién cargada
 
-<img src="capturas/a-pagina.png" alt="La página recién cargada con mi nombre en la navbar" width="600">
+<img src="capturas/captura a.png" alt="La página recién cargada con mi nombre en la navbar" width="600">
 
 [Qué se ve: tu nombre y los tres párrafos de partida.]
 
