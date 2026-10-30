@@ -1,5 +1,5 @@
 /*
-  Tarea 6 · DWEC · [Tu nombre y apellidos]
+  Tarea 6 · DWEC · Theo Van Celst
   Objetos y arrays.
 
   Cómo usar esta plantilla:
@@ -35,7 +35,13 @@ function comoTexto(lista) {
 // TODO: añádele el método presentarse(), que devuelve una frase con this.nombre, this.apellidos, this.edad y this.curso.
 //       Por ejemplo: «Soy [nombre] [apellidos], tengo [edad] años y estudio [curso].»
 const estudiante = {
-
+  nombre: "Theo",
+  apellidos: "Van Celst",
+  edad: 24,
+  curso: "2º DAW",
+  presentarse: function() {
+    return "Soy" + this.nombre + "" + this.apellidos + ", tengo" + this.edad + "años y estudio" + this.curso + ".";
+  }
 };
 
 function verFicha() {
