@@ -1,64 +1,38 @@
 # Tarea 6 · Objetos y arrays
 
-**Autor:** [Tu nombre y apellidos] · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
+**Autor:** Theo Van Celst · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
 
-> **Plantilla de la tarea 6.** Cómo usarla:
->
-> 1. Copia esta carpeta en tu repositorio de DWEC y cámbiale el nombre a `tema06`.
-> 2. `index.html` ya está maquetado: seis tarjetas, una por ejercicio. No cambies los `id` ni el `onclick` de los botones.
-> 3. `js/app.js` trae una función por botón con `TODO`. Ya están hechas `comoTexto()`, `pintarProductos()` y casi todo el ejercicio 2: úsalas de modelo.
-> 4. Todas las funciones con `function`: en esta tarea, sin funciones flecha.
-> 5. Sustituye las imágenes de `capturas/` por las tuyas, **con el mismo nombre**.
-> 6. Todo lo que va entre [corchetes] es un hueco: cámbialo por lo tuyo. Al terminar, borra este aviso.
+Esta carpeta contiene la página interactiva de la tarea. Abre `index.html` en el navegador o abre la carpeta en Visual Studio Code y pulsa **Go Live**. Los seis ejercicios están en tarjetas; los resultados aparecen en la propia página y también se registran en la consola (F12).
 
-[Una o dos líneas: qué hay en esta carpeta y cómo se ve. Por ejemplo: abrir la carpeta en VS Code, pulsar **Go Live** y probar los botones con la consola abierta (F12).]
+## Ejercicios
+
+1. **Ficha:** objeto literal con nombre, apellidos, edad y curso; `presentarse()` usa `this`. Los botones muestran los datos, aumentan la edad y eliminan `curso` con `delete`. Después de eliminarlo, `curso` pasa a ser `undefined`; la ficha lo indica como «(no indicado)».
+2. **Colores:** `push()` añade al final, `pop()` quita el último y `shift()` quita el primero. Se actualiza la lista y su contador. La lista empieza con rojo, verde y azul.
+3. **Productos:** catálogo de seis objetos. `sort()` compara precios con `a.precio - b.precio`, `filter()` selecciona los que cuestan más de 50 € y `find()` busca por una parte del nombre sin distinguir mayúsculas. Se ordena `[...productos]` porque `sort()` modifica el array sobre el que se ejecuta; así se conserva el catálogo original.
+4. **Notas:** el objeto valida que cada entrada sea un número entre 0 y 10, calcula la media con `reduce()` y muestra las aprobadas en verde y las suspensas en rojo. Empieza con cinco notas para que se vea la media desde el inicio.
+5. **Transformaciones:** `map()` obtiene los dobles, `filter()` selecciona los pares y `reduce()` suma. La cadena filtra los pares, duplica esos valores y suma los dobles: **120**.
+6. **Ciudades:** `slice(2, 5)` devuelve Málaga, Córdoba y Jaén sin modificar el array. `splice(2, 2)` extrae Málaga y Córdoba y sí cambia el array, que queda con seis ciudades. La búsqueda exacta muestra el resultado de `includes()` y la posición de `indexOf()` (o `-1` si no aparece).
 
 ## Capturas
 
-### a) La página recién cargada
+Guarda capturas propias de la página en `capturas/` con estos nombres y sustituye las imágenes de ejemplo incluidas en la plantilla. Para que sean evidencias válidas, hazlas al ejecutar tu página y muestra los resultados indicados:
 
-<img src="capturas/a-pagina.png" alt="La página recién cargada con mi nombre en la navbar" width="600">
-
-[Qué se ve nada más cargar: tu nombre, los colores, la tabla de productos y las ciudades.]
-
-### b) Ejercicios 1 y 2: la ficha y los colores
-
-<img src="capturas/b-ej1-ej2.png" alt="La ficha de estudiante y la lista de colores" width="600">
-
-[La ficha después de cumplir años y la lista de colores después de añadir y quitar alguno. Qué método has usado para cada cosa.]
-
-### c) Ejercicio 3: el catálogo ordenado por precio
-
-![La tabla de productos ordenada por precio](capturas/c-ej3-ordenado.png)
-
-[Cómo es tu función de comparación y por qué ordenas una copia.]
-
-### d) Ejercicio 4: las notas y la media
-
-![Las notas con su color y la media](capturas/d-ej4-notas.png)
-
-[Cinco notas como mínimo, aprobadas y suspensas, con su media.]
-
-### e) Ejercicio 5: los tres métodos seguidos
-
-![El resultado de filter, map y reduce encadenados](capturas/e-ej5-cadena.png)
-
-[Qué hace cada paso y qué número sale al final.]
-
-### f) Ejercicio 6: después de splice y de buscar una ciudad
-
-![Las ciudades después de splice y una búsqueda](capturas/f-ej6-splice.png)
-
-[Qué ciudades ha quitado splice, en qué posición ha quedado la que has buscado y por qué.]
+- `a-pagina.png`: página recién cargada con tu nombre, los colores iniciales, los productos y las ciudades.
+- `b-ej1-ej2.png`: ficha después de cumplir años y colores después de añadir y quitar uno.
+- `c-ej3-ordenado.png`: catálogo ordenado por precio.
+- `d-ej4-notas.png`: al menos cinco notas, con suspensos, aprobados y media.
+- `e-ej5-cadena.png`: salida de filter, map y reduce seguidos; la suma final es 120.
+- `f-ej6-splice.png`: ciudades tras usar splice y una búsqueda de ciudad.
 
 ## Reflexión
 
-[De 5 a 8 líneas: ¿qué métodos de los que has usado cambian el array original y cuáles devuelven uno nuevo? Pon como ejemplo lo que pasa en el ejercicio 6 con slice y con splice, y explica por qué en el ejercicio 3 ordenas una copia.]
+`push()`, `pop()`, `shift()`, `sort()` y `splice()` modifican el array original. En el ejercicio 6, `slice(2, 5)` devuelve una selección nueva y deja intactas las ciudades; en cambio, `splice(2, 2)` quita dos elementos de `ciudades`. `map()` y `filter()` producen arrays nuevos, y `reduce()` devuelve un único valor. En el ejercicio 3 ordeno una copia (`[...productos]`) porque `sort()` altera el array y quiero conservar el catálogo en su orden inicial para los demás botones.
 
 ## Fuentes
 
-- [Título de la página](https://enlace-a-la-fuente)
+- Material de clase: **Desarrollo web en entorno cliente. Tema 6**, proporcionado para la tarea.
+- Enunciado y plantilla: **Tarea_tema_06.pdf**, proporcionado para la tarea.
 
 ## Uso de IA
 
-[Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
+He utilizado ChatGPT como apoyo para completar y revisar la implementación y la explicación de los ejercicios. He contrastado las funciones con el enunciado y el material de clase. Debo revisar el código, probar cada botón y ser capaz de explicar las decisiones en la defensa de la tarea.
