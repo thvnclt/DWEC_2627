@@ -17,12 +17,12 @@ Esta carpeta contiene la página interactiva de la tarea. Abre `index.html` en e
 
 Guarda capturas propias de la página en `capturas/` con estos nombres y sustituye las imágenes de ejemplo incluidas en la plantilla. Para que sean evidencias válidas, hazlas al ejecutar tu página y muestra los resultados indicados:
 
-- `a-pagina.png`: página recién cargada con tu nombre, los colores iniciales, los productos y las ciudades.
-- `b-ej1-ej2.png`: ficha después de cumplir años y colores después de añadir y quitar uno.
-- `c-ej3-ordenado.png`: catálogo ordenado por precio.
-- `d-ej4-notas.png`: al menos cinco notas, con suspensos, aprobados y media.
-- `e-ej5-cadena.png`: salida de filter, map y reduce seguidos; la suma final es 120.
-- `f-ej6-splice.png`: ciudades tras usar splice y una búsqueda de ciudad.
+- <img src="capturas/a-pagina.png">: página recién cargada con tu nombre, los colores iniciales, los productos y las ciudades.
+- <img src="capturas/b-ej1-ej2.png">: ficha después de cumplir años y colores después de añadir y quitar uno.
+- <img src="capturas/c-ej3-ordenado.png">: catálogo ordenado por precio.
+- <img src="capturas/d-ej4-notas.png">: al menos cinco notas, con suspensos, aprobados y media.
+- <img src="capturas/e-ej5-cadena.png">: salida de filter, map y reduce seguidos; la suma final es 120.
+- <img src="capturas/f-ej6-splice.png">: ciudades tras usar splice y una búsqueda de ciudad.
 
 ## Reflexión
 
