@@ -185,7 +185,11 @@ document.querySelector("#numeros3").textContent = `const numeros = [${numeros.jo
 //       recorre lista con for…of, llama a operacion con cada elemento, guarda lo que devuelve
 //       en un array nuevo y, al final, devuelve ese array.
 function transformar(lista, operacion) {
-
+  const resultado = [];
+  for (const elemento of lista) {
+    resultado.push(operacion(elemento));
+  }
+  return resultado;
 }
 
 // Ya está hecha: escribe en #salida3 tu resultado, el de map y numeros
@@ -213,14 +217,16 @@ function verDobles() {
 }
 
 function verCuadrados() {
-  // TODO: como verDobles(), con el cuadrado de cada número (n ** 2).
+  const resultado = transformar(numeros, (n) => n ** 2);
+  mostrar3("cuadrados", resultado, numeros.map((n) => n ** 2));
+  console.log("Ejercicio 3: cuadrados →", resultado);
 }
 
 function verAbsolutos() {
-  // TODO: como verDobles(), con el valor absoluto (Math.abs). Pista: Math.abs ya es una función,
-  //       así que se puede pasar tal cual, sin paréntesis.
+  const resultado = transformar(numeros, Math.abs);
+  mostrar3("absolutos", resultado, numeros.map(Math.abs));
+  console.log("Ejercicio 3: absolutos →", resultado);
 }
-
 
 // ============================================================
 // Ejercicio 4 · Dos contadores con closure
