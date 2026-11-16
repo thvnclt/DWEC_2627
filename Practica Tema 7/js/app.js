@@ -54,12 +54,51 @@ function formatearEuros(cantidad) {
 }
 
 function mostrarPrecio() {
-  // TODO: lee #base, #iva y #descuento (value). El IVA conviértelo con Number().
-  // TODO: si la base está vacía o es negativa, error en #error1 (quítale "d-none") y no sigas.
-  // TODO: si el descuento está vacío, llama a calcularPrecio(base, iva), sin el tercer argumento, para que se
-  //       use el valor por defecto. Si no, comprueba que está entre 0 y 100 y pásaselo.
-  // TODO: oculta el error y pinta el desglose en #salida1 con pintarLista():
-  //       «Precio sin IVA: …», «Descuento: … %», «IVA: … %» y «Precio final: …» (con formatearEuros).
+  const baseTexto = document.querySelector("#base").value.trim();
+  const iva = Number(document.querySelector("#iva").value);
+  const descuentoTexto = document.querySelector("#descuento").value.trim();
+  const error = document.querySelector("#error");
+  const salida = document.querySelector("#salida1");
+
+  const base = Number(baseTexto);
+
+  if (baseTexto === "" || Number.isNaN(base) || base <0){
+    error.textContent = "Introduce una base válida (mayor o igual que 0).";
+    error.classList.remove("d-none");
+    salida.textContent = "";
+    console.log("Ejercicio 1: error en base");
+    return;
+  }
+
+  let descuentoAplicado = 0;
+  let total = 0;
+
+  if (descuentoTexto === ""){
+    total = calcularPrecio(base, iva);
+  } else {
+    const descuento = Number(descuentoTexto);
+    if (Number.isNaN(descuento) || descuento < 0 || descuento > 100){
+      error.textContent = "El descuento debe estar entre 0 y 100.";
+      error.classList.remove("d-none");
+      salida.textContent = "";
+      console.log("Ejercicio 1: error en descuento");
+      return;
+    }
+    descuentoAplicado = descuento;
+    total = calcularPrecio(base, iva, descuento);
+  }
+
+  error.classList.add("d-none");
+
+  const lineas = [
+    `Precio sin IVA: ${formatearEuros(base)}`,
+    `Descuento: ${descuentoAplicado}%`,
+    `IVA: ${iva}%`,
+    `Precio final: ${formatearEuros(total)}`
+  ];
+
+  pintarLista("#salida1", lineas);
+  console.log("Ejercicio 1: precio final →");
 }
 
 
