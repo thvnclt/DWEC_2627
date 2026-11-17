@@ -1,6 +1,6 @@
 # Tarea 7 · Funciones, flechas y clases
 
-**Autor:** [Tu nombre y apellidos] · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
+**Autor:** Theo Van Celst · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
 
 > **Plantilla de la tarea 7.** Cómo usarla:
 >
@@ -51,8 +51,10 @@
 
 ## Fuentes
 
-- [Título de la página](https://enlace-a-la-fuente)
+- [Título de la página](http://127.0.0.1:5500/index.html)
 
 ## Uso de IA
 
-[Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
+## Uso de IA
+
+Se ha utilizado Gemini como apoyo puntual para resolver dudas sobre la sintaxis de métodos nativos como `padStart()` y `toLocaleDateString()`, así como para revisar errores en la validación de formularios y mejorar la redacción de este README. Tras recibir las orientaciones, he escrito, probado y depurado cada ejercicio paso a paso en Visual Studio Code comprobando los resultados en la consola del navegador (F12).
